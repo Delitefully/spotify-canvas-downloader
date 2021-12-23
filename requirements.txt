@@ -1,2 +1,5 @@
 python-dotenv
 protobuf
+librespot
+fastapi
+uvicorn
