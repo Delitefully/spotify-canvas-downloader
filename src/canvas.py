@@ -1,7 +1,6 @@
 import requests
 import random
 import os
-from dotenv import load_dotenv
 from constants import *
 from librespot.core import Session
 from protos.canvaz_pb2 import EntityCanvazRequest, EntityCanvazResponse
