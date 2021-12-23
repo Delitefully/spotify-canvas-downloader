@@ -5,6 +5,9 @@ from constants import *
 from librespot.core import Session
 from protos.canvaz_pb2 import EntityCanvazRequest, EntityCanvazResponse
 
+SPOTIFY_USERNAME = os.getenv('SPOTIFY_USERNAME')
+SPOTIFY_PASSWORD = os.getenv('SPOTIFY_PASSWORD')
+
 
 def get_access_token():
     try:
