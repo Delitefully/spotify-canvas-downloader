@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      - SPOTIFY_USERNAME=${SPOTIFY_USERNAME}
+      - SPOTIFY_PASSWORD=${SPOTIFY_PASSWORD}
