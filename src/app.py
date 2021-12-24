@@ -30,7 +30,7 @@ def get_track_canvas(track_id):
         canvas_url = canvas.get_canvas_for_track(access_token, track_id)
         return {'success': 'true', 'canvas_url': canvas_url}
     except AttributeError:
-        return {'success': 'false', 'error': 'No canvas found for this track'}
+        return {'success': 'false', 'message': 'No canvas found for this track'}
     except ConnectionError:
         return {'success': 'false', 'message': 'failed to connect to Spotify'}
 
