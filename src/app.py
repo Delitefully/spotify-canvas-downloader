@@ -1,10 +1,26 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import os
 import asyncio
 import canvas
 import google.protobuf
 
 app = FastAPI()
+
+ORIGIN = os.getenv('HOST_ORIGIN')
+origins = [
+    ORIGIN,
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 access_token = ""
 
 
