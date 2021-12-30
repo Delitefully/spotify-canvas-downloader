@@ -2,7 +2,7 @@
 Tool to get Canvas cover videos from Spotify tracks.
 
 
-✨ [Try it out](https://canvastify.delitefully.com)
+## ✨ [Try it out](https://canvastify.delitefully.com)
 
 
 
@@ -23,3 +23,17 @@ Tool to get Canvas cover videos from Spotify tracks.
   ```sh
   docker-compose up
   ```
+
+### API
+
+```
+GET /api/canvas/:trackId
+```
+Returns 
+```
+{
+    success: boolean
+    canvas_url: string, if success is 'true'
+    message: string, error message if success is 'false'
+}
+```
