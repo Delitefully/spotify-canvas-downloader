@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 import asyncio
 import canvas
-import google.protobuf
+from constants import TOKEN_RENEW_TIME
 
 app = FastAPI()
 
@@ -47,7 +47,7 @@ async def refresh_token():
         except Exception as e:
             print('ERROR:   Failed to get a new access token: %s' % e)
 
-        await asyncio.sleep(1800)
+        await asyncio.sleep(TOKEN_RENEW_TIME)
 
 @app.on_event("startup")
 async def startup_event():
