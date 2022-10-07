@@ -2,4 +2,3 @@ python-dotenv
 protobuf
 fastapi
 uvicorn
-git+git://github.com/kokarare1212/librespot-python.git#egg=librespot
