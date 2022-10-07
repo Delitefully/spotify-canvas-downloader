@@ -23,7 +23,6 @@ app.add_middleware(
 
 access_token = ""
 
-
 @app.get('/api/canvas/{track_id}')
 def get_track_canvas(track_id):
     try:
@@ -34,11 +33,9 @@ def get_track_canvas(track_id):
     except ConnectionError:
         return {'success': 'false', 'message': 'failed to connect to Spotify'}
 
-
-@ app.get('/api/health')
+@app.get('/api/health')
 def health():
     return "up"
-
 
 async def refresh_token():
     global access_token
@@ -52,7 +49,6 @@ async def refresh_token():
 
         await asyncio.sleep(1800)
 
-
-@ app.on_event("startup")
+@app.on_event("startup")
 async def startup_event():
     asyncio.get_event_loop().create_task(refresh_token())

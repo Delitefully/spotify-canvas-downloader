@@ -12,8 +12,6 @@ Tool to get Canvas cover videos from Spotify tracks.
   git clone https://github.com/Delitefully/spotify-canvas-downloader
   ```
 - Configure the env variables
-
-  Note: a Premium Spotify account is required. This is a [librespot](https://github.com/librespot-org/librespot) limitation.
   ```sh
   mv env.example .env
   ```

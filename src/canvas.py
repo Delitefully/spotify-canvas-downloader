@@ -1,21 +1,13 @@
 import requests
 import random
-import os
 from constants import *
-from librespot.core import Session
-from protos.canvaz_pb2 import EntityCanvazRequest, EntityCanvazResponse
-
-SPOTIFY_USERNAME = os.getenv('SPOTIFY_USERNAME')
-SPOTIFY_PASSWORD = os.getenv('SPOTIFY_PASSWORD')
-
+from protos.canvas_pb2 import EntityCanvazRequest, EntityCanvazResponse
 
 def get_access_token():
     try:
-        session = Session.Builder() \
-            .user_pass(SPOTIFY_USERNAME, SPOTIFY_PASSWORD) \
-            .create()
-
-        return session.tokens().get(OAUTH_SCOPES)
+        response = requests.get(TOKEN_ENDPOINT)
+        data = response.json()
+        return data["accessToken"]
     except Exception as e:
         raise Exception(e)
 
