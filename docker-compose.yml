@@ -5,8 +5,7 @@ services:
     ports:
       - "8000:80"
     environment:
-      - SPOTIFY_USERNAME=${SPOTIFY_USERNAME}
-      - SPOTIFY_PASSWORD=${SPOTIFY_PASSWORD}
+      - SP_DC=${SP_DC}
       - HOST_ORIGIN=${HOST_ORIGIN}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/api/health"]

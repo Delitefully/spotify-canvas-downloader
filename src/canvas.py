@@ -2,15 +2,7 @@ import requests
 import random
 from constants import *
 from protos.canvas_pb2 import EntityCanvazRequest, EntityCanvazResponse
-
-def get_access_token():
-    try:
-        response = requests.get(TOKEN_ENDPOINT)
-        data = response.json()
-        return data["accessToken"]
-    except Exception as e:
-        raise Exception(e)
-
+from auth import get_access_token
 
 def get_canvas_for_track(access_token, track_id):
     canvas_request = EntityCanvazRequest()
